@@ -6,7 +6,7 @@
 <img class="img-circle" src="Me_square.jpg" width="300"> 
 
 <p align="center">
-I am a computer science student at the University of Utah. </br>
+I am a computer science student at the University of Utah. <br>
 I will be graduating in the Fall of 2018.
 </p>
 
