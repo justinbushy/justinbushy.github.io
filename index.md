@@ -14,7 +14,7 @@ I will be graduating in the Fall of 2018.
 
 ### Current Projects
 
-<h5>[Calendar-API](https://github.com/justinbushy/node-calendar-api)</h5> - REST API written in Node.js with a MongoDB datastore. The purpose of this API is to create flexible calendar functionality with events, todo lists, and sharing between users. The original purpose was to make sharing appointments between my wife and I easier.  
+[Calendar-API](https://github.com/justinbushy/node-calendar-api) - REST API written in Node.js with a MongoDB datastore. The purpose of this API is to create flexible calendar functionality with events, todo lists, and sharing between users. The original purpose was to make sharing appointments between my wife and I easier.  
 
 ### Past Projects
 
