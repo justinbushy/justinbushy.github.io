@@ -18,6 +18,19 @@ I will be graduating in the Fall of 2018.
 
 [Sprite Editor](https://github.com/justinbushy/SpriteEditor) - Application to create animated sprites written in C++/Qt. This was a project built by a team I was apart of for Software Practice II at the University of Utah.
 
+### Current Courses
+
+- Models of Computation
+- Web Software Architecture
 
 
+### Past Courses
 
+- Network Systems
+- Database Systems
+- Computer Systems
+- Software Practice I
+- Software Practice II
+- Computer Organization
+- Algorithms
+- Computer Graphics
