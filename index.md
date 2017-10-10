@@ -10,8 +10,9 @@ I am a computer science student at the University of Utah.
 I will be graduating in the Fall of 2018.
 </p>
 
-<h2 align="center">Current Projects</h2>
+## Current Projects
 
-[Calendar-API](https://github.com/justinbushy/node-calendar-api)
+[Calendar-API](https://github.com/justinbushy/node-calendar-api) - This is a REST API to make my wife and I's life easier to share appointments and other things with eachother. The API also includes functionality for todo lists.  
+This API is written in Node.js using an MongoDB datastore. 
 
 
