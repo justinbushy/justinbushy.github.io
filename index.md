@@ -9,6 +9,8 @@
 I am a computer science student at the University of Utah. <br>
 I will be graduating in the Fall of 2018.
 </p>
+<br>
+<br>
 
 ### Current Projects
 
