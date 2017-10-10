@@ -1,7 +1,7 @@
 ---
 ---
 
-## About Me
+<h2 alig="center'>About Me</h2>
 
 <img class="img-circle" src="Me_square.jpg" width="200"> 
 
