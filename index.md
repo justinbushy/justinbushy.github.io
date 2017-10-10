@@ -3,7 +3,7 @@
 
 <h2 align="center">About Me</h2>
 
-<img class="img-circle" src="Me_square.jpg" width="300"> 
+<img class="img-circle" src="images/Me_square.jpg" width="300"> 
 
 <p align="center">
 I am a computer science student at the University of Utah. <br>
