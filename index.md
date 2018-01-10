@@ -28,7 +28,7 @@ used are React, Axios, JSON Web Tokens for authentication, and Material-UI.
 
 - Operating Systems
 - Compilers
-
+- Senior Capstone Design
 
 ### Past Courses
 
