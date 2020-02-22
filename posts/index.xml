@@ -6,8 +6,63 @@
 		<generator>Hugo -- gohugo.io</generator>
 		<language>en-us</language>
 		<copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-		<lastBuildDate>Sat, 15 Feb 2020 15:17:38 -0700</lastBuildDate>
+		<lastBuildDate>Sat, 22 Feb 2020 07:16:55 -0700</lastBuildDate>
 		<atom:link href="https://www.justinmbush.com/posts/index.xml" rel="self" type="application/rss+xml" />
+		
+		<item>
+			<title>Starting a New Project</title>
+			<link>https://www.justinmbush.com/posts/starting-project/</link>
+			<pubDate>Sat, 22 Feb 2020 07:16:55 -0700</pubDate>
+			
+			<guid>https://www.justinmbush.com/posts/starting-project/</guid>
+			<description>Time To Play Around For a while, I&amp;rsquo;ve been messing around here and there with different things that have caught my interest. It mostly ends up with me going through &amp;ldquo;getting started&amp;rdquo; guides and reading documentation. While it&amp;rsquo;s something, it&amp;rsquo;s usually not enough to get any depth of knowledge in the subject and I end up forgetting most of it in a couple of months.
+So, for quite some time I have been trying to figure out a project to start on that would help me gain more experience in these tools.</description>
+			<content type="html"><![CDATA[<h3 id="time-to-play-around">Time To Play Around</h3>
+<p>For a while, I&rsquo;ve been messing around here and there with different things that have caught my interest.
+It mostly ends up with me going through &ldquo;getting started&rdquo; guides and reading documentation.
+While it&rsquo;s something, it&rsquo;s usually not enough to get any depth of knowledge in the subject and I end up forgetting most of it in a couple of months.</p>
+<p>So, for quite some time I have been trying to figure out a project to start on that would help me gain more experience in these tools.
+The problem was that I felt like I didn&rsquo;t have any good ideas.
+But really, I just didn&rsquo;t have the <em>perfect</em> idea.</p>
+<p>I wanted to build something that was:</p>
+<ul>
+<li>useful</li>
+<li>interesting</li>
+<li>needed to be &ldquo;scalable&rdquo;</li>
+</ul>
+<p>Now that last item was the trickiest.
+See, most applications don&rsquo;t require that last bit without a ton of users.
+So at first it was hard to justify the complex architecture just for a web app that one person will use, but today I&rsquo;ve decided to hell with justification, let&rsquo;s just build a cool thing in the way I want to build it.</p>
+<h3 id="things-i-want-to-use">Things I Want To Use</h3>
+<p>For this project, the fancy tools and technologies I want to use to begin with are the following:</p>
+<ul>
+<li>Elixir / Phoenix</li>
+<li>Kubernetes</li>
+<li>Kafka (or some other messaging/streaming queue)</li>
+<li>Istio (or some other service mesh)</li>
+<li>Prometheus / FluentD / Jaeger</li>
+<li>Whatever other &ldquo;cloud native&rdquo; things strikes my fancy</li>
+</ul>
+<p>My plan is to start off with a mostly &ldquo;monolithic&rdquo; application, break it apart when it seems to make sense, and then introduce these things in the order I&rsquo;ve put above.</p>
+<h3 id="the-idea">The Idea</h3>
+<p><em>drumroll</em></p>
+<p>Remote coaching video analysis.</p>
+<p>The idea is something that I have wanted for myself when working with my olympic weightlifting coach.
+For the most part, when training, I am by myself and I send him videos remotely.
+He then analyzes the video and sends me some critique and help with my form.
+The problem is that we mostly do this over text and it&rsquo;s hard to go back and reference past videos to see how I&rsquo;ve been improving.</p>
+<p>Now, I will be doing some discovery in the next little while, but the general idea will be:</p>
+<ul>
+<li>upload a video</li>
+<li>tag it with what type of movement it is (i.e. Hang Snatch)</li>
+<li>get a response from the coach in either text or a video analysis from something like Coach&rsquo;s Eye</li>
+</ul>
+<p>The tagging will be great to be able to look through videos of the same movement to see progression over time or areas that need work on.
+This might also be great for a &ldquo;team&rdquo; where there is a common place for everyone on the team to post their videos and get feedback in a place where the rest of the team can see.
+This would make the remote team trainings feel a little bit more connected. (Especially if the team is doing similar movements in the same cycle)</p>
+<p>With this new project, I will be posting articles about the things I am working.</p>
+]]></content>
+		</item>
 		
 		<item>
 			<title>First Post</title>
