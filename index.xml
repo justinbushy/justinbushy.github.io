@@ -13,6 +13,17 @@
     
     
     <item>
+      <title>First Things First</title>
+      <link>https://www.justinmbush.com/posts/first-things-first/</link>
+      <pubDate>Sat, 22 Feb 2020 07:54:19 -0700</pubDate>
+      
+      <guid>https://www.justinmbush.com/posts/first-things-first/</guid>
+      <description>Containerize It Now that I have a basic Idea of what I want to build, it&amp;rsquo;s time to dive in.
+The very first thing that I want to do is create a Phoenix app and throw it in a Docker container. After creating the Phoenix app by following their getting started guide, I created the following Dockerfile:
+FROMelixir:latestRUN apt-get update &amp;amp;&amp;amp; \  apt-get install -y postgresql-clientRUN mkdir /appCOPY ./remote_coach /appWORKDIR/appRUN mix local.</description>
+    </item>
+    
+    <item>
       <title>Starting a New Project</title>
       <link>https://www.justinmbush.com/posts/starting-project/</link>
       <pubDate>Thu, 20 Feb 2020 07:16:55 -0700</pubDate>

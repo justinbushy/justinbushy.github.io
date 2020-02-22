@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="theme-color" content="#494f5c">
+	<meta name="msapplication-TileColor" content="#494f5c">
+<meta itemprop="name" content="First Things First">
+<meta itemprop="description" content="Containerize It Now that I have a basic Idea of what I want to build, it&rsquo;s time to dive in.
+The very first thing that I want to do is create a Phoenix app and throw it in a Docker container. After creating the Phoenix app by following their getting started guide, I created the following Dockerfile:
+FROMelixir:latestRUN apt-get update &amp;&amp; \  apt-get install -y postgresql-clientRUN mkdir /appCOPY ./remote_coach /appWORKDIR/appRUN mix local.">
+<meta itemprop="datePublished" content="2020-02-22T07:54:19-07:00" />
+<meta itemprop="dateModified" content="2020-02-22T07:54:19-07:00" />
+<meta itemprop="wordCount" content="532">
+
+
+
+<meta itemprop="keywords" content="" /><meta property="og:title" content="First Things First" />
+<meta property="og:description" content="Containerize It Now that I have a basic Idea of what I want to build, it&rsquo;s time to dive in.
+The very first thing that I want to do is create a Phoenix app and throw it in a Docker container. After creating the Phoenix app by following their getting started guide, I created the following Dockerfile:
+FROMelixir:latestRUN apt-get update &amp;&amp; \  apt-get install -y postgresql-clientRUN mkdir /appCOPY ./remote_coach /appWORKDIR/appRUN mix local." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.justinmbush.com/posts/first-things-first/" />
+<meta property="article:published_time" content="2020-02-22T07:54:19-07:00" />
+<meta property="article:modified_time" content="2020-02-22T07:54:19-07:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="First Things First"/>
+<meta name="twitter:description" content="Containerize It Now that I have a basic Idea of what I want to build, it&rsquo;s time to dive in.
+The very first thing that I want to do is create a Phoenix app and throw it in a Docker container. After creating the Phoenix app by following their getting started guide, I created the following Dockerfile:
+FROMelixir:latestRUN apt-get update &amp;&amp; \  apt-get install -y postgresql-clientRUN mkdir /appCOPY ./remote_coach /appWORKDIR/appRUN mix local."/>
+
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+	<link rel="shortcut icon" href="/favicon.ico">
+
+	<title>First Things First</title>
+	<link rel="stylesheet" href="https://www.justinmbush.com/css/style.min.657bcb7af31123e4156b1a3d2ff60a636717e54ead74f882136b5114cf72b55e.css" integrity="sha256-ZXvLevMRI+QVaxo9L/YKY2cX5U6tdPiCE2tRFM9ytV4=" crossorigin="anonymous">
+	
+</head>
+
+<body id="page">
+	
+	<header id="site-header" class="animated slideInUp faster">
+		<div class="hdr-wrapper section-inner">
+			<div class="hdr-left">
+				<div class="site-branding">
+					<a href="https://www.justinmbush.com">Justin Bush</a>
+				</div>
+				<nav class="site-nav hide-in-mobile">
+					
+				<a href="https://www.justinmbush.com/posts/">Posts</a>
+				<a href="https://www.justinmbush.com/about/">About</a>
+
+				</nav>
+			</div>
+			<div class="hdr-right hdr-icons">
+				<span class="hdr-social hide-in-mobile"><a href="https://github.com/justinbushy" target="_blank" rel="noopener me" title="Github"><svg xmlns="http://www.w3.org/2000/svg" class="feather" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a><a href="https://www.linkedin.com/in/justin-bush-0bb471133/" target="_blank" rel="noopener me" title="Linkedin"><svg xmlns="http://www.w3.org/2000/svg" class="feather" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a></span><button id="menu-btn" class="hdr-btn" title="Menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+			</div>
+		</div>
+	</header>
+	<div id="mobile-menu" class="animated fast">
+		<ul>
+			<li><a href="https://www.justinmbush.com/posts/">Posts</a></li>
+			<li><a href="https://www.justinmbush.com/about/">About</a></li>
+		</ul>
+	</div>
+
+
+	<main class="site-main section-inner animated fadeIn faster">
+		<article class="thin">
+			<header class="post-header">
+				<div class="post-meta"><span>Feb 22, 2020</span></div>
+				<h1>First Things First</h1>
+			</header>
+			<div class="content">
+				<h3 id="containerize-it">Containerize It<a href="#containerize-it" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+<p>Now that I have a basic Idea of what I want to build, it&rsquo;s time to dive in.</p>
+<p>The very first thing that I want to do is create a Phoenix app and throw it in a Docker container.
+After creating the Phoenix app by following their getting started guide, I created the following Dockerfile:</p>
+<div class="highlight"><pre class="chroma"><code class="language-Dockerfile" data-lang="Dockerfile"><span class="k">FROM</span><span class="s"> elixir:latest</span><span class="err">
+</span><span class="err">
+</span><span class="err"></span><span class="k">RUN</span> apt-get update <span class="o">&amp;&amp;</span> <span class="se">\
+</span><span class="se"></span>  apt-get install -y postgresql-client<span class="err">
+</span><span class="err">
+</span><span class="err"></span><span class="k">RUN</span> mkdir /app<span class="err">
+</span><span class="err"></span><span class="k">COPY</span> ./remote_coach /app<span class="err">
+</span><span class="err"></span><span class="k">WORKDIR</span><span class="s"> /app</span><span class="err">
+</span><span class="err">
+</span><span class="err"></span><span class="k">RUN</span> mix local.hex --force<span class="err">
+</span><span class="err">
+</span><span class="err"></span><span class="k">RUN</span> mix <span class="k">do</span> compile<span class="err">
+</span><span class="err">
+</span><span class="err"></span><span class="k">CMD</span> <span class="p">[</span><span class="s2">&#34;/app/entrypoint.sh&#34;</span><span class="p">]</span><span class="err">
+</span></code></pre></div><p>As you can see, it&rsquo;s very straight forward.
+Just copy the code, compile, and then call the <code>entrypoint</code> script.
+Now, Phoenix needs a database (usually postgresql).
+I could either run a local instance of postgres, or I could use a container.
+Since this is for development for now and I&rsquo;m not too worried about data loss when a container might crash, I went with a container.
+For now, I am just using <code>Docker-Compose</code> to spin up these two containers because it was the quickest thing for now.
+I plan on using Kubernetes later to orchestrate these containers.</p>
+<p>Here is the simple compose file that I am using:</p>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="k">version</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;3&#39;</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="k">services</span><span class="p">:</span><span class="w"> 
+</span><span class="w">  </span><span class="k">phoenix</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="k">build</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span><span class="k">context</span><span class="p">:</span><span class="w"> </span>.<span class="w">
+</span><span class="w">    </span><span class="k">environment</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span><span class="k">PGUSER</span><span class="p">:</span><span class="w"> </span>postgres<span class="w">
+</span><span class="w">      </span><span class="k">PGPASSWORD</span><span class="p">:</span><span class="w"> </span>postgres<span class="w">
+</span><span class="w">      </span><span class="k">PGDATABASE</span><span class="p">:</span><span class="w"> </span>remote_coach_dev<span class="w">
+</span><span class="w">      </span><span class="k">PGPORT</span><span class="p">:</span><span class="w"> </span><span class="m">5432</span><span class="w">
+</span><span class="w">      </span><span class="k">PGHOST</span><span class="p">:</span><span class="w"> </span>db<span class="w">
+</span><span class="w">    </span><span class="k">ports</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span>- <span class="s2">&#34;4000:4000&#34;</span><span class="w">
+</span><span class="w">    </span><span class="k">depends_on</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span>- db<span class="w">
+</span><span class="w">  </span><span class="k">db</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="k">image</span><span class="p">:</span><span class="w"> </span>postgres<span class="p">:</span><span class="m">12.1</span><span class="w">
+</span><span class="w">    </span><span class="k">environment</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span><span class="k">POSTGRES_USER</span><span class="p">:</span><span class="w"> </span>postgres<span class="w">
+</span><span class="w">      </span><span class="k">POSTGRES_PASSWORD</span><span class="p">:</span><span class="w"> </span>postgres<span class="w">
+</span><span class="w">      </span><span class="k">PGDATA</span><span class="p">:</span><span class="w"> </span>/var/lib/postgresql/data/pgdata<span class="w">
+</span><span class="w">    </span><span class="k">restart</span><span class="p">:</span><span class="w"> </span>always<span class="w">
+</span><span class="w">    </span><span class="k">volumes</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span>- pgdata<span class="p">:</span>/var/lib/postgresql/data/pgdata<span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="k">volumes</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="k">pgdata</span><span class="p">:</span><span class="w">
+</span></code></pre></div><p>From there it&rsquo;s just a simple</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">docker-compose build
+docker-compose up
+</code></pre></div><p>and we are up and running.</p>
+<h3 id="basic-aws-vpc">Basic AWS VPC<a href="#basic-aws-vpc" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+<p>The next thing that I need is an AWS environment that I can build as I go.
+I plan to build this application in a way that my CI/CD pipeline can deploy code from my master branch.</p>
+<p>For my initial test VPC, I went with a very simple 2 subnet setup in the same AZ.
+For now, this is all I need to just get started and play around.
+I have one public subnet and one private.</p>
+<p>To create this VPC, I went directly to CloudFormation.
+This is to keep as much infrastructure as possible defined in code and to utilize a lot of the benefits of what AWS has for IaC.</p>
+<p>The CloudFormation stacks that I wrote to create the VPC are too long to post here, but you could see them in my test bed project on <a href="https://github.com/justinbushy/aws_test_bed/blob/master/cloud_formation_stacks/test_vpc.yml">Github</a></p>
+<h3 id="saving-dollars">Saving Dollars<a href="#saving-dollars" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+<p>This is kind of a side note, but now that my AWS account is out of the free-tier range, I am starting to see how expensive even the smallest things can be.
+One of these expensive things is an AWS NAT Gateway.
+Just to have a NAT Gateway on 24/7 with no data costs $32/month.
+While that is a small price to pay for a managed gateway, I figured I could save some money since I won&rsquo;t be using this 24/7 at this point.</p>
+<p>AWS suggested a small linux instance that I manage myself for a cheaper NAT, but I thought I might be able to do something more clever for now.
+I decided to try using CloudFormation to spin up a new NAT whenever I needed one.
+It ended up being pretty straight forward:</p>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="k">Resources</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="k">GatewayEIP</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="k">Type</span><span class="p">:</span><span class="w"> </span>AWS<span class="p">::</span>EC2<span class="p">::</span>EIP<span class="w">
+</span><span class="w">  </span><span class="k">NatGateway</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="k">Type</span><span class="p">:</span><span class="w"> </span>AWS<span class="p">::</span>EC2<span class="p">::</span>NatGateway<span class="w">
+</span><span class="w">    </span><span class="k">Properties</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span><span class="k">AllocationId</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="k">Fn::GetAtt</span><span class="p">:</span><span class="w">
+</span><span class="w">          </span>- GatewayEIP<span class="w">
+</span><span class="w">          </span>- AllocationId<span class="w">
+</span><span class="w">      </span><span class="k">SubnetId</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="k">Fn::ImportValue</span><span class="p">:</span><span class="w"> 
+</span><span class="w">          </span>!Sub<span class="w"> </span><span class="s2">&#34;${VPCStackName}-Private-Subnet&#34;</span><span class="w">
+</span><span class="w">      </span><span class="k">Tags</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span>- <span class="k">Key</span><span class="p">:</span><span class="w"> </span>Name<span class="w">
+</span><span class="w">          </span><span class="k">Value</span><span class="p">:</span><span class="w">
+</span><span class="w">            </span><span class="k">Fn::Join</span><span class="p">:</span><span class="w">
+</span><span class="w">              </span>- <span class="s2">&#34;&#34;</span><span class="w">
+</span><span class="w">              </span>- - <span class="k">Fn::ImportValue</span><span class="p">:</span><span class="w"> </span>!Sub<span class="w"> </span><span class="s2">&#34;${VPCStackName}-VPCID&#34;</span><span class="w">
+</span><span class="w">                </span>- <span class="s2">&#34;-NAT&#34;</span><span class="w">
+</span></code></pre></div><p>The great things about using CloudFormation for this:</p>
+<ul>
+<li>Using Managed AWS Gateway instead of managing my own</li>
+<li>Deleting various resources tied to the NAT is automatic</li>
+</ul>
+<p>That&rsquo;s all I have for now, the next update will be setting up my Drone CI/CD server.</p>
+
+			</div>
+			<hr class="post-end">
+			<footer class="post-info">
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>532 Words</p>
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2020-02-22 07:54 -0700</p>
+			</footer>
+		</article>
+		<div class="post-nav thin">
+			<a class="prev-post" href="https://www.justinmbush.com/posts/starting-project/">
+				<span class="post-nav-label">Older&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span><br><span>Starting a New Project</span>
+			</a>
+		</div>
+		<div id="comments" class="thin">
+</div>
+	</main>
+
+	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
+		<p>&copy; 2020 <a href="https://www.justinmbush.com">Justin Bush</a> &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></p>
+		<p>
+			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="https://www.justinmbush.com/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
+		</p>
+	</footer>
+
+
+
+	<script src="https://www.justinmbush.com/js/bundle.min.4a9a0ac3d2217822c7865b4161e6c2a71de1d70492264337755427898dd718f6.js" integrity="sha256-SpoKw9IheCLHhltBYebCpx3h1wSSJkM3dVQniY3XGPY=" crossorigin="anonymous"></script>
+	
+
+</body>
+
+</html>
