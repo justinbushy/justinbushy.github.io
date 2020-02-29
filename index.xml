@@ -13,6 +13,16 @@
     
     
     <item>
+      <title>Drone</title>
+      <link>https://www.justinmbush.com/posts/drone/</link>
+      <pubDate>Sat, 29 Feb 2020 09:04:05 -0700</pubDate>
+      
+      <guid>https://www.justinmbush.com/posts/drone/</guid>
+      <description>Continuous Integration Before I even start writing any code, I wanted to start off with a CI/CD tool. After doing some research, I have landed on using Drone. At first, I will only be using Drone for continuous integration while developing, but will eventually use it for deploying into my &amp;ldquo;production&amp;rdquo; system.
+IaC All The Things With this project, I want to start everything right away with defining all infrastructure as code.</description>
+    </item>
+    
+    <item>
       <title>First Things First</title>
       <link>https://www.justinmbush.com/posts/first-things-first/</link>
       <pubDate>Sat, 22 Feb 2020 07:54:19 -0700</pubDate>

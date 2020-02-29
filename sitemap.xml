@@ -3,12 +3,17 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://www.justinmbush.com/posts/first-things-first/</loc>
-    <lastmod>2020-02-22T07:54:19-07:00</lastmod>
+    <loc>https://www.justinmbush.com/posts/drone/</loc>
+    <lastmod>2020-02-29T09:04:05-07:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.justinmbush.com/posts/</loc>
+    <lastmod>2020-02-29T09:04:05-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.justinmbush.com/posts/first-things-first/</loc>
     <lastmod>2020-02-22T07:54:19-07:00</lastmod>
   </url>
   
